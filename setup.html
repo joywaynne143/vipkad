@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>上传开店资料 — VipKad</title>
+  <meta name="description" content="Send VipKad your shop name, logo, brand colour, membership rules and owner contact so we can build your membership Web App.">
+  <meta name="theme-color" content="#143226">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://vipkad.com/setup.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,620;9..144,700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="flow-page">
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="logo" href="./index.html" aria-label="VipKad">
+        <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#143226"/>
+          <rect x="10" y="16" width="44" height="32" rx="6" fill="#C8A45A"/>
+          <rect x="13" y="19" width="38" height="26" rx="4" fill="#143226"/>
+          <text x="32" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#F6F1E8">VK</text>
+        </svg>
+        VipKad
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="./index.html#features" data-i18n="nav_features">卖点</a>
+        <a href="./index.html#demo" data-i18n="nav_demo">现场试用</a>
+        <a href="./index.html#pricing" data-i18n="nav_pricing">收费</a>
+        <a href="./order.html" data-i18n="nav_order">自助下单</a>
+      </nav>
+      <div class="header-tools">
+        <div class="switcher" role="group" aria-label="Language">
+          <button class="lang-btn" type="button" data-lang="zh" aria-pressed="true">中文</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">English</button>
+          <button class="lang-btn" type="button" data-lang="ms" aria-pressed="false">Bahasa Melayu</button>
+        </div>
+        <div class="switcher" role="group" aria-label="Currency">
+          <button class="cur-btn" type="button" data-currency="MYR" aria-pressed="true">Malaysia (RM)</button>
+          <button class="cur-btn" type="button" data-currency="SGD" aria-pressed="false">Singapore (S$)</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="section flow-intro">
+    <div class="wrap flow-wrap">
+      <div id="setup-intro">
+        <p class="kicker" data-i18n="setup_kicker">开店资料 · 1 到 3 天上线</p>
+        <h1 data-i18n="setup_title">把会员系统做成你的品牌</h1>
+        <p class="lede" data-i18n="setup_sub">下面这些资料够我们直接做出店铺的会员网页：店名、logo、品牌色、积分规则和老板联络方式。</p>
+      </div>
+
+      <div class="notice" id="paid-notice"></div>
+
+      <aside class="order-summary" id="order-summary">
+        <div>
+          <strong id="summary-plan">标准版</strong>
+          <span id="summary-price">RM 899 + RM 999/年</span>
+        </div>
+        <div class="order-summary-side">
+          <span class="badge" id="summary-status">待确认付款</span>
+          <a id="change-plan" href="./order.html" data-i18n="change_plan">改方案</a>
+        </div>
+      </aside>
+
+      <form id="setup-form" novalidate>
+        <div class="hp" aria-hidden="true">
+          <label>Company<input name="_honey" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <ol class="stepper" id="stepper">
+          <li><button type="button" data-goto="0"><span>1</span><em data-i18n="step_biz">店铺</em></button></li>
+          <li><button type="button" data-goto="1"><span>2</span><em data-i18n="step_brand">品牌</em></button></li>
+          <li><button type="button" data-goto="2"><span>3</span><em data-i18n="step_rules">规则</em></button></li>
+          <li><button type="button" data-goto="3"><span>4</span><em data-i18n="step_owner">联络</em></button></li>
+          <li><button type="button" data-goto="4"><span>5</span><em data-i18n="step_review">确认</em></button></li>
+        </ol>
+
+        <p class="form-alert" id="form-alert" hidden></p>
+
+        <section class="step-panel" data-step="0">
+          <h2 data-i18n="biz_title">店铺资料</h2>
+          <p class="hint" data-i18n="biz_lead"></p>
+          <div class="field" data-field="shop">
+            <label for="shop-name" data-i18n="shop_name">店铺 / 品牌名称</label>
+            <input id="shop-name" name="shopName" autocomplete="organization" maxlength="80" data-i18n-placeholder="ph_shop">
+            <p class="err" id="err-shop"></p>
+          </div>
+          <div class="split">
+            <div class="field" data-field="category">
+              <label for="category" data-i18n="category">业种</label>
+              <select id="category" name="category">
+                <option value="" data-i18n="cat_placeholder">请选择</option>
+                <option value="fnb" data-i18n="cat_fnb">餐厅餐饮</option>
+                <option value="cafe" data-i18n="cat_cafe">咖啡馆</option>
+                <option value="halal" data-i18n="cat_halal">马来 / 清真餐饮</option>
+                <option value="beauty" data-i18n="cat_beauty">美容美发</option>
+                <option value="retail" data-i18n="cat_retail">零售</option>
+                <option value="other" data-i18n="cat_other">其他</option>
+              </select>
+              <p class="err" id="err-category"></p>
+            </div>
+            <div class="field" data-field="outlets">
+              <label for="outlets" data-i18n="outlets">分店数量</label>
+              <input id="outlets" name="outlets" type="number" min="1" max="200" step="1" value="1" inputmode="numeric">
+              <p class="err" id="err-outlets"></p>
+            </div>
+          </div>
+          <div class="field" id="other-wrap" data-field="other" hidden>
+            <label for="category-other" data-i18n="other_detail">其他业种，请说明</label>
+            <input id="category-other" name="categoryOther" maxlength="80" data-i18n-placeholder="ph_other">
+            <p class="err" id="err-other"></p>
+          </div>
+          <div class="field" data-field="address">
+            <label for="address" data-i18n="address">地址与营业时间</label>
+            <textarea id="address" name="address" rows="4" data-i18n-placeholder="ph_address"></textarea>
+            <p class="field-hint" data-i18n="address_hint"></p>
+            <p class="err" id="err-address"></p>
+          </div>
+          <div class="field" data-field="domain">
+            <label for="domain" data-i18n="domain">想用的网址</label>
+            <input id="domain" name="domain" maxlength="80" autocapitalize="off" spellcheck="false" data-i18n-placeholder="ph_domain">
+            <p class="field-hint" data-i18n="domain_hint"></p>
+            <p class="err" id="err-domain"></p>
+          </div>
+        </section>
+
+        <section class="step-panel" data-step="1" hidden>
+          <h2 data-i18n="brand_title">品牌资产</h2>
+          <p class="hint" data-i18n="brand_lead"></p>
+          <div class="brand-grid">
+            <div>
+              <div class="field" data-field="logo">
+                <label for="logo-input" data-i18n="logo">店铺 logo</label>
+                <div class="upload-row">
+                  <img id="logo-preview" alt="" hidden>
+                  <label class="filebox">
+                    <span id="logo-name" data-i18n="no_file">尚未选择</span>
+                    <strong data-i18n="choose_file">选择文件</strong>
+                    <input id="logo-input" name="logo" type="file" accept="image/png,image/jpeg,image/svg+xml,.png,.jpg,.jpeg,.svg">
+                  </label>
+                </div>
+                <button class="text-link" id="logo-remove" type="button" hidden data-i18n="remove_file">移除</button>
+                <p class="field-hint" data-i18n="logo_hint"></p>
+                <p class="err" id="err-logo"></p>
+              </div>
+              <div class="field" data-field="hero">
+                <label for="hero-input" data-i18n="hero">店面或主视觉图片（可选）</label>
+                <div class="upload-row">
+                  <img id="hero-preview" alt="" hidden>
+                  <label class="filebox">
+                    <span id="hero-name" data-i18n="no_file">尚未选择</span>
+                    <strong data-i18n="choose_file">选择文件</strong>
+                    <input id="hero-input" name="hero" type="file" accept="image/png,image/jpeg,image/svg+xml,.png,.jpg,.jpeg,.svg">
+                  </label>
+                </div>
+                <button class="text-link" id="hero-remove" type="button" hidden data-i18n="remove_file">移除</button>
+                <p class="field-hint" data-i18n="hero_hint"></p>
+                <p class="err" id="err-hero"></p>
+              </div>
+              <div class="field" data-field="color">
+                <label for="color-hex" data-i18n="color">品牌主色</label>
+                <div class="swatches" id="swatches" role="listbox" aria-label="Presets"></div>
+                <div class="color-row">
+                  <input id="color-picker" type="color" value="#143226" aria-label="Color picker">
+                  <input id="color-hex" name="color" value="#143226" maxlength="7" spellcheck="false" autocapitalize="off" inputmode="text">
+                </div>
+                <p class="err" id="err-color"></p>
+              </div>
+            </div>
+            <aside class="preview-aside">
+              <p class="field-hint" data-i18n="card_preview">会员卡预览</p>
+              <article class="mini-card" id="brand-card">
+                <div class="mini-card-top">
+                  <img id="card-logo" alt="" hidden>
+                  <span class="mini-mark" id="card-mark">VK</span>
+                  <span id="card-brand">VipKad</span>
+                </div>
+                <div class="mini-card-tier" id="card-tier">VIP</div>
+                <div class="mini-card-meta"><span id="card-shop"></span> · <span id="card-meta" data-i18n="card_member">会员</span></div>
+              </article>
+            </aside>
+          </div>
+        </section>
+
+        <section class="step-panel" data-step="2" hidden>
+          <h2 data-i18n="rules_title">会员规则</h2>
+          <p class="hint" data-i18n="rules_lead"></p>
+          <div class="field" data-field="points">
+            <label for="points" data-i18n="points">积分怎么算</label>
+            <input id="points" name="points" maxlength="120">
+            <p class="err" id="err-points"></p>
+          </div>
+          <div class="split">
+            <div class="field" data-field="welcome">
+              <label for="welcome" data-i18n="welcome">新会员见面礼</label>
+              <input id="welcome" name="welcome" maxlength="160" data-i18n-placeholder="ph_welcome">
+              <p class="err" id="err-welcome"></p>
+            </div>
+            <div class="field" data-field="birthday">
+              <label for="birthday" data-i18n="birthday">生日奖励</label>
+              <input id="birthday" name="birthday" maxlength="160" data-i18n-placeholder="ph_birthday">
+              <p class="err" id="err-birthday"></p>
+            </div>
+          </div>
+          <div class="field" data-field="rewards">
+            <label for="rewards" data-i18n="rewards">可兑换的奖品示例</label>
+            <textarea id="rewards" name="rewards" rows="4" data-i18n-placeholder="ph_rewards"></textarea>
+            <p class="field-hint" data-i18n="rewards_hint"></p>
+            <p class="err" id="err-rewards"></p>
+          </div>
+          <fieldset class="field checks" data-field="antifraud">
+            <legend data-i18n="antifraud">防刷单方式</legend>
+            <p class="field-hint" data-i18n="antifraud_hint"></p>
+            <label class="check"><input type="checkbox" name="antifraud" value="qr" checked><span data-i18n="af_qr"></span></label>
+            <label class="check"><input type="checkbox" name="antifraud" value="receipt" checked><span data-i18n="af_receipt"></span></label>
+            <label class="check"><input type="checkbox" name="antifraud" value="approval" checked><span data-i18n="af_approval"></span></label>
+            <p class="err" id="err-antifraud"></p>
+          </fieldset>
+        </section>
+
+        <section class="step-panel" data-step="3" hidden>
+          <h2 data-i18n="owner_title">老板联络方式</h2>
+          <p class="hint" data-i18n="owner_lead"></p>
+          <div class="field" data-field="owner">
+            <label for="owner-name" data-i18n="owner_name">老板姓名</label>
+            <input id="owner-name" name="ownerName" autocomplete="name" maxlength="80" data-i18n-placeholder="ph_owner">
+            <p class="err" id="err-owner"></p>
+          </div>
+          <div class="split">
+            <div class="field" data-field="whatsapp">
+              <label for="whatsapp" data-i18n="owner_wa">WhatsApp 号码</label>
+              <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" data-i18n-placeholder="ph_wa">
+              <p class="err" id="err-whatsapp"></p>
+            </div>
+            <div class="field" data-field="email">
+              <label for="email" data-i18n="owner_email">邮箱</label>
+              <input id="email" name="email" type="email" autocomplete="email" maxlength="120" data-i18n-placeholder="ph_email">
+              <p class="err" id="err-email"></p>
+            </div>
+          </div>
+          <fieldset class="field" data-field="language">
+            <legend data-i18n="owner_lang">希望我们用哪种语言联络</legend>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="ownerLang" value="zh"><span data-i18n="lang_zh">中文</span></label>
+              <label class="choice"><input type="radio" name="ownerLang" value="en"><span data-i18n="lang_en">English</span></label>
+              <label class="choice"><input type="radio" name="ownerLang" value="ms"><span data-i18n="lang_ms">Bahasa Melayu</span></label>
+            </div>
+            <p class="err" id="err-language"></p>
+          </fieldset>
+        </section>
+
+        <section class="step-panel" data-step="4" hidden>
+          <h2 data-i18n="review_title">确认后送出</h2>
+          <p class="hint" data-i18n="review_lead"></p>
+          <div id="review-list" class="review-list"></div>
+        </section>
+
+        <div class="step-nav" id="step-nav">
+          <button class="btn btn-ghost" id="step-back" type="button" data-i18n="back">上一步</button>
+          <button class="btn btn-gold" id="step-next" type="button" data-i18n="next">下一步</button>
+          <button class="btn btn-gold" id="submit-brief" type="submit" hidden data-i18n="submit">送出开店资料</button>
+        </div>
+      </form>
+
+      <section id="confirm-panel" hidden>
+        <p class="kicker" data-i18n="confirm_kicker">资料已收下</p>
+        <h2 id="confirm-heading" data-i18n="confirm_title">我们开始为你准备会员网页</h2>
+        <p class="lede" id="confirm-body"></p>
+        <p class="ref-label" data-i18n="confirm_ref">订单编号</p>
+        <p class="ref-id" id="reference-id"></p>
+        <div class="hero-actions">
+          <button class="btn btn-dark" id="download-brief" type="button" data-i18n="download">下载资料备份 JSON</button>
+          <button class="btn btn-ghost" id="copy-ref" type="button" data-i18n="copy_ref">复制编号</button>
+          <a class="btn btn-gold" id="wa-followup" href="https://wa.me/60167799222" data-i18n="wa_followup">用 WhatsApp 发送编号</a>
+        </div>
+        <button class="text-link" id="edit-again" type="button" data-i18n="another">返回修改</button>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>© 2026 VipKad · hello@vipkad.com</div>
+      <a href="./index.html" data-i18n="back_home">返回首页</a>
+    </div>
+  </footer>
+
+  <div class="flow-sticky" id="setup-sticky">
+    <button class="btn btn-ghost" id="sticky-back" type="button" data-i18n="back">上一步</button>
+    <button class="btn btn-gold" id="sticky-next" type="button" data-i18n="next">下一步</button>
+  </div>
+
+  <noscript>
+    <p class="wrap">Email your shop brief to hello@vipkad.com and we’ll set up the membership page with you.</p>
+  </noscript>
+
+  <script src="./vipkad-config.js"></script>
+  <script src="./vipkad-locale.js"></script>
+  <script src="./vipkad-catalog.js"></script>
+  <script src="./vipkad-flow-i18n.js"></script>
+  <script src="./setup.js"></script>
+  <script src="./vipkad-chat.js"></script>
+</body>
+</html>

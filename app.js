@@ -14,19 +14,6 @@ const SAMPLE_APPS = {
   ]
 };
 
-const PRICES = {
-  MY: {
-    starter: { monthly: "RM 59", yearly: "RM 599", per: { monthly: "/月", yearly: "/年" }, setup: "开通费 RM 499", yearHint: "年付相当于送约 2 个月" },
-    standard: { monthly: "RM 99", yearly: "RM 999", per: { monthly: "/月", yearly: "/年" }, setup: "开通费 RM 899", yearHint: "年付相当于送约 2 个月" },
-    early: { setup: "开通费 RM 299", monthly: "其后按所选方案计" }
-  },
-  SG: {
-    starter: { monthly: "S$19", yearly: "S$189", per: { monthly: "/mo", yearly: "/yr" }, setup: "Setup S$149", yearHint: "Annual billing saves about 2 months" },
-    standard: { monthly: "S$29", yearly: "S$299", per: { monthly: "/mo", yearly: "/yr" }, setup: "Setup S$269", yearHint: "Annual billing saves about 2 months" },
-    early: { setup: "Setup S$99", monthly: "Then billed on your chosen plan" }
-  }
-};
-
 const I18N = {
   zh: {
     doc_title: "VipKad — 独立品牌会员系统，给马来西亚与新加坡的店家",
@@ -35,6 +22,13 @@ const I18N = {
     nav_pricing: "收费",
     nav_faq: "常见问题",
     nav_cta: "WhatsApp 咨询",
+    nav_order: "自助下单",
+    hero_cta_order: "自助下单，马上准备上线",
+    plan_cta: "选择此方案",
+    final_btn_order: "自助下单并上传店铺资料",
+    sticky_order: "自助下单",
+    footer_order: "自助下单",
+    footer_setup: "上传开店资料",
     hero_kicker: "马来西亚 · 新加坡 · 中英马三语",
     hero_title: "你自己的品牌会员系统，顾客扫码 30 秒就能加入",
     hero_sub: "专为餐厅、咖啡馆、马来与清真餐饮、美容美发店打造。不用下载 App，不用换收银系统，1 到 3 天就能上线。会员资料 100% 属于你，不会被第三方平台转手。",
@@ -138,10 +132,10 @@ const I18N = {
     q6: "多久能上线？种子优惠怎么算？",
     a6: "一般 1 到 3 天。前 3 到 5 家店可享更低开通费，之后按你选择的入门版或标准版计算月费或年费。",
     final_title: "把会员留在自己店里，从这一周开始",
-    final_sub: "先试用上面的演示，再把链接发给我们。我们会用你的店名、logo 和会员规则，尽快帮你做成能在店里扫码用的版本。",
+    final_sub: "可以先试用上面的演示，也可以直接自助下单：选好方案后上传店名、logo、品牌色和会员规则。我们会在 1 到 3 天内做成能在店里扫码用的版本。",
     final_btn: "WhatsApp 告诉我店名，帮我估价上线",
     footer_left: "© 2026 VipKad（vipkad.com）。独立品牌会员系统，服务马来西亚与新加坡中小店家。",
-    footer_right: "演示资料不会被保存。WhatsApp：+60 16-779 9222",
+    footer_right: "演示资料不会被保存。hello@vipkad.com · WhatsApp：+60 16-779 9222",
     wa_prefill: "你好，我在看 VipKad（vipkad.com）独立品牌会员系统，想了解怎样帮我的店上线。",
     ph_name: "例如：林美玲",
     ph_phone: "例如：012-345 6789",
@@ -154,6 +148,13 @@ const I18N = {
     nav_pricing: "Pricing",
     nav_faq: "FAQ",
     nav_cta: "WhatsApp us",
+    nav_order: "Order now",
+    hero_cta_order: "Order and start setup",
+    plan_cta: "Choose this plan",
+    final_btn_order: "Order and upload your shop brief",
+    sticky_order: "Order now",
+    footer_order: "Order",
+    footer_setup: "Upload shop brief",
     hero_kicker: "Malaysia · Singapore · Chinese, English & Bahasa Melayu",
     hero_title: "Your own-brand membership system. Guests scan a QR and join in 30 seconds.",
     hero_sub: "Built for restaurants, cafés, Malay and Halal F&B, salons and retailers. No app download, no POS replacement, live in 1–3 days. Customer data stays 100% yours — not locked inside a third-party platform that could be sold.",
@@ -257,10 +258,10 @@ const I18N = {
     q6: "How fast can we go live, and what is the founding offer?",
     a6: "Usually 1–3 days. The first 3–5 shops get a lower setup fee, then monthly or yearly billing on the Starter or Standard plan you choose.",
     final_title: "Keep your members in your own shop, starting this week",
-    final_sub: "Try the demo above, then message us with your shop name. We'll put your logo, colours and membership rules into a version you can scan in-store.",
+    final_sub: "Try the demo above, or order directly: pick a plan, then upload your shop name, logo, colours and membership rules. We turn that into an in-store version in 1–3 days.",
     final_btn: "WhatsApp your shop name and get a go-live quote",
     footer_left: "© 2026 VipKad (vipkad.com). Own-brand membership for small and mid-size shops in Malaysia and Singapore.",
-    footer_right: "Demo data is not stored. WhatsApp: +60 16-779 9222",
+    footer_right: "Demo data is not stored. hello@vipkad.com · WhatsApp: +60 16-779 9222",
     wa_prefill: "Hi, I was looking at VipKad (vipkad.com), the own-brand membership system, and would like to know how to get it set up for my shop.",
     ph_name: "e.g. Lim Mei Ling",
     ph_phone: "e.g. 012-345 6789",
@@ -273,6 +274,13 @@ const I18N = {
     nav_pricing: "Harga",
     nav_faq: "Soalan lazim",
     nav_cta: "WhatsApp kami",
+    nav_order: "Pesan sendiri",
+    hero_cta_order: "Pesan dan mula persediaan",
+    plan_cta: "Pilih pelan ini",
+    final_btn_order: "Pesan dan muat naik maklumat kedai",
+    sticky_order: "Pesan sendiri",
+    footer_order: "Pesan",
+    footer_setup: "Muat naik maklumat",
     hero_kicker: "Malaysia · Singapura · Bahasa Melayu, Inggeris & Cina",
     hero_title: "Sistem keahlian jenama sendiri. Pelanggan imbas QR, daftar dalam 30 saat.",
     hero_sub: "Untuk restoran, kafe, premis F&B Melayu dan Halal, salun dan runcit. Tak perlu muat turun app, tak perlu tukar sistem POS, boleh naik talian dalam 1–3 hari. Data pelanggan milik anda 100% — bukan terkunci dalam platform pihak ketiga yang boleh dijual sewaktu-waktu.",
@@ -376,10 +384,10 @@ const I18N = {
     q6: "Berapa lama nak naik talian, dan apa tawaran rakan niaga awal?",
     a6: "Biasanya 1–3 hari. 3–5 kedai pertama dapat caj pemasangan yang lebih rendah, kemudian yuran bulanan atau tahunan mengikut pelan Asas atau Standard yang anda pilih.",
     final_title: "Simpan ahli dalam kedai anda sendiri, mula minggu ini",
-    final_sub: "Cuba demo di atas, kemudian WhatsApp nama kedai anda. Kami akan letakkan logo, warna dan peraturan keahlian anda ke dalam versi yang boleh diimbas di kedai.",
+    final_sub: "Cuba demo di atas, atau pesan terus: pilih pelan, kemudian muat naik nama kedai, logo, warna dan peraturan keahlian. Kami siapkan versi untuk imbas di kedai dalam 1–3 hari.",
     final_btn: "WhatsApp nama kedai untuk dapatkan sebut harga",
     footer_left: "© 2026 VipKad (vipkad.com). Sistem keahlian jenama sendiri untuk kedai kecil dan sederhana di Malaysia dan Singapura.",
-    footer_right: "Data demo tidak disimpan. WhatsApp: +60 16-779 9222",
+    footer_right: "Data demo tidak disimpan. hello@vipkad.com · WhatsApp: +60 16-779 9222",
     wa_prefill: "Hai, saya baru tengok VipKad (vipkad.com), sistem keahlian jenama sendiri, nak tanya macam mana nak pasang untuk kedai saya.",
     ph_name: "cth. Siti Nurhaliza",
     ph_phone: "cth. 012-345 6789",
@@ -389,7 +397,7 @@ const I18N = {
 
 const state = {
   lang: "zh",
-  currency: "MY",
+  currency: "MYR",
   billing: "yearly",
   view: "customer",
   submitted: false,
@@ -423,6 +431,7 @@ function applyLang() {
   document.querySelectorAll("a[data-wa]").forEach((a) => {
     a.href = waLink();
   });
+  if (window.VipKadLocale) VipKadLocale.syncSwitchers();
   renderPrices();
   renderOwnerList();
   const fileLabel = document.getElementById("photo-label");
@@ -430,49 +439,57 @@ function applyLang() {
 }
 
 function applyCurrency() {
-  document.querySelectorAll(".cur-btn").forEach((btn) => {
-    btn.setAttribute("aria-pressed", String(btn.dataset.currency === state.currency));
-  });
+  if (window.VipKadLocale) VipKadLocale.syncSwitchers();
   renderPrices();
 }
 
+function updateOrderLinks() {
+  if (!window.VipKadCatalog) return;
+  document.querySelectorAll("[data-order]").forEach((anchor) => {
+    const plan = anchor.getAttribute("data-order");
+    anchor.href = VipKadCatalog.orderHref(plan ? {
+      plan: plan,
+      billing: state.billing,
+      currency: state.currency
+    } : {
+      billing: state.billing,
+      currency: state.currency
+    });
+  });
+  document.querySelectorAll("[data-setup]").forEach((anchor) => {
+    anchor.href = VipKadCatalog.setupHref({
+      plan: anchor.getAttribute("data-setup") || "standard",
+      billing: state.billing,
+      currency: state.currency
+    }, { paid: false });
+  });
+}
+
 function renderPrices() {
-  const table = PRICES[state.currency];
+  if (!window.VipKadCatalog) return;
   const cycle = state.billing;
   const lang = state.lang;
-  const perOverride = {
-    zh: { monthly: "/月", yearly: "/年" },
-    en: { monthly: "/mo", yearly: "/yr" },
-    ms: { monthly: "/bulan", yearly: "/tahun" }
-  };
-  const setupPrefix = { zh: "", en: "", ms: "" };
-  const yearHints = {
-    zh: "年付相当于送约 2 个月",
-    en: "Annual billing saves about 2 months",
-    ms: "Bayaran tahunan jimat lebih kurang 2 bulan"
-  };
-  const earlyRest = {
-    MY: { zh: "其后按所选方案计", en: "Then billed on your chosen plan", ms: "Kemudian mengikut pelan yang dipilih" },
-    SG: { zh: "其后按所选方案计", en: "Then billed on your chosen plan", ms: "Kemudian mengikut pelan yang dipilih" }
-  };
-
+  const perKey = cycle === "monthly" ? "per_monthly" : "per_yearly";
   ["starter", "standard"].forEach((plan) => {
-    const p = table[plan];
+    const quote = VipKadCatalog.quote({ plan: plan, billing: cycle, currency: state.currency });
     const priceEl = document.getElementById("price-" + plan);
     const perEl = document.getElementById("per-" + plan);
     const setupEl = document.getElementById("setup-" + plan);
-    if (priceEl) priceEl.textContent = p[cycle];
-    if (perEl) perEl.textContent = perOverride[lang][cycle];
+    if (priceEl) priceEl.textContent = quote.recurringText;
+    if (perEl) perEl.textContent = VipKadCatalog.label(lang, perKey);
     if (setupEl) {
-      setupEl.textContent = p.setup + (cycle === "yearly" ? " · " + yearHints[lang] : "");
+      setupEl.textContent = VipKadCatalog.label(lang, "setup_fee") + " " + quote.setupText +
+        (cycle === "yearly" ? " · " + VipKadCatalog.label(lang, "year_hint") : "");
     }
   });
+  const early = VipKadCatalog.quote({ plan: "early", tier: "standard", billing: cycle, currency: state.currency, early: true });
   const earlySetup = document.getElementById("setup-early");
   const earlyPrice = document.getElementById("price-early");
   const earlyPer = document.getElementById("per-early");
-  if (earlyPrice) earlyPrice.textContent = table.early.setup;
+  if (earlyPrice) earlyPrice.textContent = early.setupText;
   if (earlyPer) earlyPer.textContent = "";
-  if (earlySetup) earlySetup.textContent = earlyRest[state.currency][lang];
+  if (earlySetup) earlySetup.textContent = VipKadCatalog.label(lang, "setup_fee") + " · " + VipKadCatalog.label(lang, "then_plan");
+  updateOrderLinks();
 }
 
 function setBilling(cycle) {
@@ -493,7 +510,9 @@ function setView(view) {
 }
 
 function resetApps() {
-  state.apps = SAMPLE_APPS[state.lang].map((a) => ({ ...a }));
+  const spendA = state.currency === "SGD" ? "S$ 96" : "RM 328";
+  const spendB = state.currency === "SGD" ? "S$ 320" : "RM 1,080";
+  state.apps = SAMPLE_APPS[state.lang].map((a, index) => ({ ...a, spend: index === 0 ? spendA : spendB }));
   state.submitted = false;
   state.photoName = "";
 }
@@ -579,11 +598,10 @@ function submitDemo(ev) {
 }
 
 function boot() {
-  const params = new URLSearchParams(location.search);
-  const savedLang = params.get("lang") || localStorage.getItem("vipkad-lang");
-  const savedCur = params.get("cur") || localStorage.getItem("vipkad-cur");
-  if (savedLang && I18N[savedLang]) state.lang = savedLang;
-  if (savedCur && PRICES[savedCur]) state.currency = savedCur;
+  if (window.VipKadLocale) {
+    state.lang = VipKadLocale.getLang();
+    state.currency = VipKadLocale.getCurrency();
+  }
 
   resetApps();
   applyLang();
@@ -595,14 +613,14 @@ function boot() {
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.lang = btn.dataset.lang;
-      localStorage.setItem("vipkad-lang", state.lang);
+      if (window.VipKadLocale) VipKadLocale.setLang(state.lang);
       applyLang();
     });
   });
   document.querySelectorAll(".cur-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
-      state.currency = btn.dataset.currency;
-      localStorage.setItem("vipkad-cur", state.currency);
+      state.currency = VipKadLocale.normalizeCurrency(btn.dataset.currency) || "MYR";
+      VipKadLocale.setCurrency(state.currency);
       applyCurrency();
     });
   });

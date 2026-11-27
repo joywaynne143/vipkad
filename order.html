@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>自助下单 — VipKad</title>
+  <meta name="description" content="Choose a VipKad plan for your shop in Malaysia or Singapore, see the setup fee and monthly or yearly price, then continue to onboarding.">
+  <meta name="theme-color" content="#143226">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://vipkad.com/order.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,620;9..144,700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="flow-page">
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="logo" href="./index.html" aria-label="VipKad">
+        <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#143226"/>
+          <rect x="10" y="16" width="44" height="32" rx="6" fill="#C8A45A"/>
+          <rect x="13" y="19" width="38" height="26" rx="4" fill="#143226"/>
+          <text x="32" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#F6F1E8">VK</text>
+        </svg>
+        VipKad
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="./index.html#features" data-i18n="nav_features">卖点</a>
+        <a href="./index.html#demo" data-i18n="nav_demo">现场试用</a>
+        <a href="./index.html#pricing" data-i18n="nav_pricing">收费</a>
+        <a href="./order.html" data-i18n="nav_order" aria-current="page">自助下单</a>
+      </nav>
+      <div class="header-tools">
+        <div class="switcher" role="group" aria-label="Language">
+          <button class="lang-btn" type="button" data-lang="zh" aria-pressed="true">中文</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">English</button>
+          <button class="lang-btn" type="button" data-lang="ms" aria-pressed="false">Bahasa Melayu</button>
+        </div>
+        <div class="switcher" role="group" aria-label="Currency">
+          <button class="cur-btn" type="button" data-currency="MYR" aria-pressed="true">Malaysia (RM)</button>
+          <button class="cur-btn" type="button" data-currency="SGD" aria-pressed="false">Singapore (S$)</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section flow-intro">
+      <div class="wrap">
+        <p class="kicker" data-i18n="order_kicker">自助下单 · 中英马三语</p>
+        <h1 data-i18n="order_title">选好方案，接着上传店铺资料</h1>
+        <p class="lede" data-i18n="order_sub">先看清楚开通费和月费或年费。付款链接接上之后会在这里跳转付款；现在还没接上，选完就可以直接填写开店资料。</p>
+
+        <div class="bill-toggle">
+          <div class="switcher" role="group" aria-label="Billing cycle">
+            <button class="bill-btn" type="button" data-bill="monthly" aria-pressed="false" data-i18n="bill_monthly_long">月付</button>
+            <button class="bill-btn" type="button" data-bill="yearly" aria-pressed="true" data-i18n="bill_yearly_long">年付更省</button>
+          </div>
+        </div>
+
+        <div class="plans" role="radiogroup" aria-label="Plan">
+          <article class="plan" role="radio" tabindex="0" aria-checked="false" data-plan="starter">
+            <h3 data-i18n="plan_starter">入门版</h3>
+            <p class="setup" data-i18n="plan_starter_for">适合想先试试看的小店</p>
+            <div class="price"><span data-price="starter">RM 599</span><span data-per="starter">/年</span></div>
+            <p class="setup" data-setup="starter">开通费 RM 499</p>
+            <ul>
+              <li data-i18n="f_starter_1"></li>
+              <li data-i18n="f_starter_2"></li>
+              <li data-i18n="f_starter_3"></li>
+              <li data-i18n="f_starter_4"></li>
+              <li data-i18n="f_starter_5"></li>
+            </ul>
+          </article>
+          <article class="plan featured is-selected" role="radio" tabindex="0" aria-checked="true" data-plan="standard">
+            <span class="rec" data-i18n="rec">最受欢迎</span>
+            <h3 data-i18n="plan_standard">标准版</h3>
+            <p class="setup" data-i18n="plan_standard_for">餐厅、咖啡馆、美容美发店主推</p>
+            <div class="price"><span data-price="standard">RM 999</span><span data-per="standard">/年</span></div>
+            <p class="setup" data-setup="standard">开通费 RM 899</p>
+            <ul>
+              <li data-i18n="f_standard_1"></li>
+              <li data-i18n="f_standard_2"></li>
+              <li data-i18n="f_standard_3"></li>
+              <li data-i18n="f_standard_4"></li>
+              <li data-i18n="f_standard_5"></li>
+            </ul>
+          </article>
+          <article class="plan" role="radio" tabindex="0" aria-checked="false" data-plan="early">
+            <h3 data-i18n="plan_early">种子客户</h3>
+            <p class="setup" data-i18n="plan_early_for">前 3 到 5 家店的开通费优惠</p>
+            <div class="price"><span data-price="early">开通费 RM 299</span><span data-per="early"></span></div>
+            <p class="setup" data-setup="early">其后按所选方案计</p>
+            <ul>
+              <li data-i18n="f_early_1"></li>
+              <li data-i18n="f_early_2"></li>
+              <li data-i18n="f_early_3"></li>
+              <li data-i18n="f_early_4"></li>
+            </ul>
+          </article>
+        </div>
+
+        <section class="breakdown" aria-live="polite">
+          <div>
+            <h2 data-i18n="breakdown_title">价格明细</h2>
+            <div class="tier-switch" id="tier-switch" hidden>
+              <span data-i18n="early_tier_label">优惠之后，月费 / 年费按</span>
+              <div class="switcher" role="group" aria-label="Ongoing plan">
+                <button type="button" data-tier="starter" aria-pressed="false">入门版</button>
+                <button type="button" data-tier="standard" aria-pressed="true">标准版</button>
+              </div>
+            </div>
+            <dl class="breakdown-lines" id="breakdown-lines"></dl>
+            <p class="pricing-note left" id="pay-note"></p>
+          </div>
+          <div class="breakdown-actions">
+            <button class="btn btn-gold" id="continue-order" type="button" data-i18n="setup_cta">继续填写开店资料</button>
+            <a class="btn btn-ghost" id="already-paid" href="./setup.html" data-i18n="already_paid">已经付过？直接填写资料</a>
+            <a class="text-link" data-wa href="https://wa.me/60167799222" data-i18n="wa_ask">想先问一句</a>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>© 2026 VipKad · hello@vipkad.com</div>
+      <a href="./index.html" data-i18n="back_home">返回首页</a>
+    </div>
+  </footer>
+
+  <div class="flow-sticky">
+    <div class="flow-sticky-copy">
+      <strong id="sticky-total">RM 899 + RM 999</strong>
+      <span id="sticky-sub"></span>
+    </div>
+    <button class="btn btn-gold" id="sticky-continue" type="button" data-i18n="sticky_continue">继续</button>
+  </div>
+
+  <noscript>
+    <p class="wrap">VipKad order needs JavaScript. Email hello@vipkad.com and we’ll set the shop up with you.</p>
+  </noscript>
+
+  <script src="./vipkad-config.js"></script>
+  <script src="./vipkad-locale.js"></script>
+  <script src="./vipkad-catalog.js"></script>
+  <script src="./vipkad-flow-i18n.js"></script>
+  <script src="./order.js"></script>
+  <script src="./vipkad-chat.js"></script>
+</body>
+</html>
