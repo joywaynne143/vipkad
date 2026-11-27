@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VipKad — 独立品牌会员系统，给马来西亚与新加坡的店家</title>
+  <meta name="description" content="VipKad (vipkad.com) is an own-brand membership Web App for restaurants, cafés, Malay and Halal F&B, salons and shops in Malaysia and Singapore. Chinese, English and Bahasa Melayu. No app download, no POS swap, customer data stays yours.">
+  <meta name="theme-color" content="#143226">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://vipkad.netlify.app/">
+  <meta property="og:title" content="VipKad (vipkad.com) — Own-brand membership for Malaysia & Singapore">
+  <meta property="og:description" content="Guests scan a QR and join in 30 seconds. You approve on your phone. Your data stays yours. 中文 / English / Bahasa Melayu.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,620;9..144,700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="logo" href="#top" aria-label="VipKad">
+        <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#143226"/>
+          <rect x="10" y="16" width="44" height="32" rx="6" fill="#C8A45A"/>
+          <rect x="13" y="19" width="38" height="26" rx="4" fill="#143226"/>
+          <text x="32" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#F6F1E8">VK</text>
+        </svg>
+        VipKad
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#features" data-i18n="nav_features">卖点</a>
+        <a href="#demo" data-i18n="nav_demo">现场试用</a>
+        <a href="#pricing" data-i18n="nav_pricing">收费</a>
+        <a href="#faq" data-i18n="nav_faq">常见问题</a>
+      </nav>
+      <div class="header-tools">
+        <div class="switcher" role="group" aria-label="Language">
+          <button class="lang-btn" type="button" data-lang="zh" aria-pressed="true">中文</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">English</button>
+          <button class="lang-btn" type="button" data-lang="ms" aria-pressed="false">Bahasa Melayu</button>
+        </div>
+        <div class="switcher" role="group" aria-label="Currency">
+          <button class="cur-btn" type="button" data-currency="MY" aria-pressed="true">Malaysia (RM)</button>
+          <button class="cur-btn" type="button" data-currency="SG" aria-pressed="false">Singapore (S$)</button>
+        </div>
+        <a class="btn btn-gold btn-wa-desktop" data-wa href="https://wa.me/60167799222" data-i18n="nav_cta">WhatsApp 咨询</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="kicker" data-i18n="hero_kicker">马来西亚 · 新加坡 · 中英马三语</div>
+          <h1 data-i18n="hero_title">你自己的品牌会员系统，顾客扫码 30 秒就能加入</h1>
+          <p class="lede" data-i18n="hero_sub">专为餐厅、咖啡馆、马来与清真餐饮、美容美发店打造。不用下载 App，不用换收银系统，1 到 3 天就能上线。会员资料 100% 属于你，不会被第三方平台转手。</p>
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="#demo" data-i18n="hero_cta_demo">马上试用演示</a>
+            <a class="btn btn-gold" data-wa href="https://wa.me/60167799222" data-i18n="hero_cta_wa">WhatsApp 了解上线</a>
+          </div>
+          <p class="trust" data-i18n="hero_trust">已在新山和宫日料上线运行。前 3 到 5 家店享种子客户开通优惠。</p>
+        </div>
+        <div class="stage" aria-hidden="true">
+          <article class="card card-black">
+            <div class="card-top"><span class="chip" data-i18n="card_owner">独立品牌</span><span>VIPKAD</span></div>
+            <div class="card-name" data-i18n="card_black">黑金卡</div>
+            <div class="card-meta" data-i18n="card_member">会员</div>
+          </article>
+          <article class="card card-bronze">
+            <div class="card-top"><span class="chip">QR</span><span>VIPKAD</span></div>
+            <div class="card-name" data-i18n="card_bronze">铜卡</div>
+            <div class="card-meta" data-i18n="card_member">会员</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-i18n="points_kicker">为什么是独立系统</div>
+          <h2 data-i18n="points_title">六个老板一看就懂的理由</h2>
+          <p class="lede" data-i18n="points_sub">不是把客人赶到别人的平台，而是让你的店拥有自己的会员门面。</p>
+        </div>
+        <div class="grid-6">
+          <article class="feature"><div class="feature-num">01</div><h3 data-i18n="p1_t">会员资料 100% 属于你</h3><p data-i18n="p1_d"></p></article>
+          <article class="feature"><div class="feature-num">02</div><h3 data-i18n="p2_t">告别纸笔手抄，专业又省时</h3><p data-i18n="p2_d"></p></article>
+          <article class="feature"><div class="feature-num">03</div><h3 data-i18n="p3_t">顾客不用下载 App</h3><p data-i18n="p3_d"></p></article>
+          <article class="feature"><div class="feature-num">04</div><h3 data-i18n="p4_t">不用换掉现有收银系统</h3><p data-i18n="p4_d"></p></article>
+          <article class="feature"><div class="feature-num">05</div><h3 data-i18n="p5_t">防刷单，老板亲自把关</h3><p data-i18n="p5_d"></p></article>
+          <article class="feature"><div class="feature-num">06</div><h3 data-i18n="p6_t">自己的品牌门面，直接留住客人</h3><p data-i18n="p6_d"></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demo" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-i18n="demo_kicker">一分钟体验</div>
+          <h2 data-i18n="demo_title">先当顾客登记，再当老板一点批准</h2>
+          <p class="lede" data-i18n="demo_sub">不用安装任何东西。用你的手机，现在就可以走一遍完整流程。这是演示环境，不会保存真实资料。</p>
+        </div>
+        <div class="demo-shell">
+          <div>
+            <div class="tabs" role="tablist">
+              <button class="view-btn" type="button" data-view="customer" aria-pressed="true" data-i18n="tab_customer">顾客端：扫码加入</button>
+              <button class="view-btn" type="button" data-view="owner" aria-pressed="false" data-i18n="tab_owner">老板端：一点批准</button>
+            </div>
+            <p class="hint" id="demo-side-hint" data-i18n="demo_customer_hint"></p>
+          </div>
+          <div class="phone">
+            <div class="phone-bar"><span></span></div>
+            <div class="screen">
+              <div id="view-customer">
+                <div id="form-panel">
+                  <h3 data-i18n="demo_customer_title">申请加入会员</h3>
+                  <p class="hint" data-i18n="demo_customer_hint"></p>
+                  <form id="demo-form">
+                    <div class="field">
+                      <label for="f-name" data-i18n="demo_name">姓名</label>
+                      <input id="f-name" name="name" required autocomplete="name" data-i18n-placeholder="ph_name">
+                    </div>
+                    <div class="field">
+                      <label for="f-phone" data-i18n="demo_phone">手机号码</label>
+                      <input id="f-phone" name="phone" required inputmode="tel" autocomplete="tel" data-i18n-placeholder="ph_phone">
+                    </div>
+                    <div class="field">
+                      <label for="f-receipt" data-i18n="demo_receipt">收据号码</label>
+                      <input id="f-receipt" name="receipt" required data-i18n-placeholder="ph_receipt">
+                    </div>
+                    <div class="field">
+                      <label data-i18n="demo_photo">收据照片</label>
+                      <label class="filebox">
+                        <span id="photo-label" data-i18n="demo_photo_empty">未选择文件（演示可跳过）</span>
+                        <strong data-i18n="demo_photo_btn">选择照片</strong>
+                        <input id="f-photo" type="file" accept="image/*">
+                      </label>
+                    </div>
+                    <button class="btn btn-ghost" id="fill-sample" type="button" data-i18n="demo_fill">填入示例</button>
+                    <button class="btn btn-dark" type="submit" data-i18n="demo_submit">提交申请</button>
+                  </form>
+                </div>
+                <div id="thanks-panel" class="success" hidden>
+                  <div class="success-icon">✓</div>
+                  <h3 data-i18n="demo_thanks_t">申请已送出</h3>
+                  <p class="hint" data-i18n="demo_thanks_d"></p>
+                  <button class="btn btn-dark" id="go-owner" type="button" data-i18n="demo_go_owner">打开老板端</button>
+                  <button class="btn btn-ghost" id="try-again" type="button" data-i18n="demo_reset">再试一次</button>
+                </div>
+              </div>
+              <div id="view-owner" hidden>
+                <h3 data-i18n="demo_owner_title">待审核申请</h3>
+                <p class="hint" data-i18n="demo_owner_hint"></p>
+                <p class="hint" id="app-empty" data-i18n="demo_empty" hidden></p>
+                <div class="app-list" id="app-list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="showcase">
+      <div class="wrap">
+        <article class="showcase">
+          <div>
+            <span class="showcase-tag" data-i18n="showcase_tag">实店运行中</span>
+            <div class="kicker" data-i18n="showcase_kicker">真实店铺在用</div>
+            <h2 data-i18n="showcase_title">和宫日料已经在新山上线</h2>
+            <p class="lede" data-i18n="showcase_body"></p>
+          </div>
+          <div class="shop-tile">
+            <div>
+              <div class="jp" data-i18n="showcase_shop">和宫 · Nagomiya</div>
+              <div class="place" data-i18n="showcase_place">Johor Bahru, Malaysia</div>
+            </div>
+            <div data-i18n="showcase_note">铜卡 / 黑金卡 · 中英双语 · 店内扫码登记</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-i18n="pricing_kicker">清楚、好开口的价格</div>
+          <h2 data-i18n="pricing_title">给中小店准备的起步方案</h2>
+          <p class="lede" data-i18n="pricing_sub">比市面上常见的会员平台更轻、更好上手。价格可按马来西亚（令吉）或新加坡（新元）查看。</p>
+        </div>
+        <div class="bill-toggle">
+          <div class="switcher" role="group" aria-label="Billing cycle">
+            <button class="bill-btn" type="button" data-bill="monthly" aria-pressed="false" data-i18n="bill_monthly">月付</button>
+            <button class="bill-btn" type="button" data-bill="yearly" aria-pressed="true" data-i18n="bill_yearly">年付更省</button>
+          </div>
+        </div>
+        <div class="plans">
+          <article class="plan">
+            <h3 data-i18n="plan_starter">入门版</h3>
+            <p class="setup" data-i18n="plan_starter_for">适合想先试试看的小店</p>
+            <div class="price"><span id="price-starter">RM 599</span><span id="per-starter">/年</span></div>
+            <p class="setup" id="setup-starter">开通费 RM 499</p>
+            <ul>
+              <li data-i18n="f_starter_1"></li>
+              <li data-i18n="f_starter_2"></li>
+              <li data-i18n="f_starter_3"></li>
+              <li data-i18n="f_starter_4"></li>
+              <li data-i18n="f_starter_5"></li>
+            </ul>
+            <a class="btn btn-dark" data-wa href="https://wa.me/60167799222" data-i18n="nav_cta">WhatsApp 咨询</a>
+          </article>
+          <article class="plan featured">
+            <span class="rec" data-i18n="rec">最受欢迎</span>
+            <h3 data-i18n="plan_standard">标准版</h3>
+            <p class="setup" data-i18n="plan_standard_for">餐厅、咖啡馆、美容美发店主推</p>
+            <div class="price"><span id="price-standard">RM 999</span><span id="per-standard">/年</span></div>
+            <p class="setup" id="setup-standard">开通费 RM 899</p>
+            <ul>
+              <li data-i18n="f_standard_1"></li>
+              <li data-i18n="f_standard_2"></li>
+              <li data-i18n="f_standard_3"></li>
+              <li data-i18n="f_standard_4"></li>
+              <li data-i18n="f_standard_5"></li>
+            </ul>
+            <a class="btn btn-gold" data-wa href="https://wa.me/60167799222" data-i18n="nav_cta">WhatsApp 咨询</a>
+          </article>
+          <article class="plan">
+            <h3 data-i18n="plan_early">种子客户</h3>
+            <p class="setup" data-i18n="plan_early_for">前 3 到 5 家店</p>
+            <div class="price"><span id="price-early">开通费 RM 299</span><span id="per-early"></span></div>
+            <p class="setup" id="setup-early">其后按所选方案计</p>
+            <ul>
+              <li data-i18n="f_early_1"></li>
+              <li data-i18n="f_early_2"></li>
+              <li data-i18n="f_early_3"></li>
+              <li data-i18n="f_early_4"></li>
+            </ul>
+            <a class="btn btn-dark" data-wa href="https://wa.me/60167799222" data-i18n="nav_cta">WhatsApp 咨询</a>
+          </article>
+        </div>
+        <p class="pricing-note" data-i18n="pricing_note"></p>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-i18n="faq_kicker">老板常问</div>
+          <h2 data-i18n="faq_title">常见问题</h2>
+        </div>
+        <div class="faq">
+          <details open><summary data-i18n="q1"></summary><p data-i18n="a1"></p></details>
+          <details><summary data-i18n="q2"></summary><p data-i18n="a2"></p></details>
+          <details><summary data-i18n="q3"></summary><p data-i18n="a3"></p></details>
+          <details><summary data-i18n="q4"></summary><p data-i18n="a4"></p></details>
+          <details><summary data-i18n="q5"></summary><p data-i18n="a5"></p></details>
+          <details><summary data-i18n="q6"></summary><p data-i18n="a6"></p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 10px;">
+      <div class="wrap">
+        <div class="final">
+          <h2 data-i18n="final_title">把会员留在自己店里，从这一周开始</h2>
+          <p class="lede" data-i18n="final_sub"></p>
+          <a class="btn btn-gold" data-wa href="https://wa.me/60167799222" data-i18n="final_btn">WhatsApp 告诉我店名，帮我估价上线</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div data-i18n="footer_left"></div>
+      <div data-i18n="footer_right"></div>
+    </div>
+  </footer>
+
+  <div class="sticky-wa">
+    <a class="btn btn-gold" data-wa href="https://wa.me/60167799222" data-i18n="nav_cta">WhatsApp 咨询</a>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

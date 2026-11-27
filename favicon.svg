@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="VipKad">
+  <rect width="64" height="64" rx="14" fill="#143226"/>
+  <rect x="10" y="16" width="44" height="32" rx="6" fill="#C8A45A"/>
+  <rect x="13" y="19" width="38" height="26" rx="4" fill="#143226"/>
+  <text x="32" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#F6F1E8">VK</text>
+</svg>
